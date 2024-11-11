@@ -29,6 +29,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/berita/tambah', [BeritaController::class, 'create'])->middleware(['auth', 'verified'])->name('berita.create');
+Route::post('/berita/tambah', [BeritaController::class, 'store'])->middleware(['auth', 'verified'])->name('berita.store');
+
 Route::get('/berita', function () {
     return view('berita',['posts'=>Berita::all()]);
 });
@@ -57,10 +60,6 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
     ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
-
-
-Route::get('/berita/tambah', [BeritaController::class, 'create'])->name('berita.create');
-Route::post('/berita', [BeritaController::class, 'store'])->name('berita.store');
 
 
 require __DIR__.'/auth.php';

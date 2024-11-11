@@ -22,10 +22,10 @@
                             <label for="title" class="block text-sm font-medium text-gray-700">Judul</label>
                             <input type="text" name="title" id="title" class="mt-1 block w-full" required>
                         </div>
-
+                    
                         <div class="mb-4">
-                            <label for="content" class="block text-sm font-medium text-gray-700">Konten</label>
-                            <textarea name="content" id="content" rows="5" class="mt-1 block w-full" required></textarea>
+                            <label for="body" class="block text-sm font-medium text-gray-700">Konten</label>
+                            <textarea name="body" id="body" rows="5" class="mt-1 block w-full" required></textarea>
                         </div>
 
                         <div class="mt-4">

@@ -10,7 +10,7 @@
             <a href="#" class="no-underline">{{$post->author->name}}</a> | {{$post->created_at->diffForHumans()}}
         </div>
         <p class="my-4 font-light">{{Str::limit($post['body'],150)}}</p>
-        <a href="/berita/{{$post['slug']}}" class="font-medium text-blue-500 no-underline hover:underline">Baca Lainnya &raquo;</a>
+        <a href="/berita/{{$post['slug']}}" class="font-medium text-blue-500 no-underline hover:underline">Selengkapnya &raquo;</a>
     </article>
     @endforeach
 
