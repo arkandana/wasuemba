@@ -1,3 +1,3 @@
 <x-layout>
-    <h3>Halaman Home</h3>
+    <h3>Halaman Dashboard</h3>
 </x-layout>

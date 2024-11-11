@@ -1,5 +1,5 @@
 <x-layout>
-    <h3>Halaman berita</h3>
+    <h3>Halaman Berita</h3>
 
     @foreach($posts as $post)
     <article class="py-8 max-w-screen-md border-b border-gray-300">
