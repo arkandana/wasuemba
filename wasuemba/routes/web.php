@@ -29,6 +29,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/wisata', function () {
+    return view('wisata');
+});
+
 Route::get('/berita/tambah', [BeritaController::class, 'create'])->middleware(['auth', 'verified'])->name('berita.create');
 Route::post('/berita/tambah', [BeritaController::class, 'store'])->middleware(['auth', 'verified'])->name('berita.store');
 
