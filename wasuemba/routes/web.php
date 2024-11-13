@@ -3,9 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Berita;
+use App\Models\wisata;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\WisataController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,8 +31,11 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/wisata/tambah', [WisataController::class, 'create'])->middleware(['auth', 'verified'])->name('wisata.create');
+Route::post('/wisata/tambah', [WisataController::class, 'store'])->middleware(['auth', 'verified'])->name('wisata.store');
+
 Route::get('/wisata', function () {
-    return view('wisata');
+    return view('wisata',['wisataList'=>wisata::all()]);
 });
 
 Route::get('/berita/tambah', [BeritaController::class, 'create'])->middleware(['auth', 'verified'])->name('berita.create');
@@ -64,6 +69,7 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
     ->name('register');
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
+
 
 
 require __DIR__.'/auth.php';
