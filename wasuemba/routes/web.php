@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Berita;
-use App\Models\wisata;
+use App\Models\Wisata;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\BeritaController;
@@ -21,11 +21,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
-});
+})->name('home');
 
 Route::get('/about', function () {
     return view('about');
@@ -33,7 +29,7 @@ Route::get('/about', function () {
 
 Route::get('/wisata/tambah', [WisataController::class, 'create'])->middleware(['auth', 'verified'])->name('wisata.create');
 Route::post('/wisata/tambah', [WisataController::class, 'store'])->middleware(['auth', 'verified'])->name('wisata.store');
-Route::delete('/wisata', [WisataController::class, 'destroy'])->middleware(['auth', 'verified'])->name('wisata.destroy');
+Route::delete('/wisata/{id}', [WisataController::class, 'destroy'])->middleware(['auth', 'verified'])->name('wisata.destroy');
 
 Route::get('/wisata', function () {
     return view('wisata',['wisataList'=>wisata::all()]);
@@ -41,6 +37,7 @@ Route::get('/wisata', function () {
 
 Route::get('/berita/tambah', [BeritaController::class, 'create'])->middleware(['auth', 'verified'])->name('berita.create');
 Route::post('/berita/tambah', [BeritaController::class, 'store'])->middleware(['auth', 'verified'])->name('berita.store');
+Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->middleware(['auth', 'verified'])->name('berita.destroy');
 
 Route::get('/berita', function () {
     return view('berita',['posts'=>Berita::all()]);

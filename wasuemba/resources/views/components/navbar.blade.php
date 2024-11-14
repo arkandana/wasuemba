@@ -26,11 +26,11 @@
                                 class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline"
                                 href='/berita' :active="request()->is('berita')">Berita</x-nav-link>
                             <x-nav-link
-                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline" href='/data'
-                                :active="request()->is('data')">Data Strategis</x-nav-link>
+                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline"
+                                href='/data' :active="request()->is('data')">Data Strategis</x-nav-link>
                             <x-nav-link
-                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline" href='/contact'
-                                :active="request()->is('contact')">Kontak</x-nav-link>
+                                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white no-underline"
+                                href='/contact' :active="request()->is('contact')">Kontak</x-nav-link>
                         </div>
                     </div>
                 </div>
@@ -39,25 +39,36 @@
 
                         <!-- Profile dropdown -->
                         <div class="relative ml-3">
-                            <div>
-                                {{-- <button type="button" @click="isOpen = !isOpen" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                    </button> --}}
-                                <x-nav-link href='/login' :active="request()->is('contact')">Login</x-nav-link>
+                            <div class="flex justify-between items-center">
+                                @if (Auth::check())
+                                    <button type="button" @click="isOpen = !isOpen"
+                                        class="block max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-1 w-8 h-8 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                        id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                        <span class="absolute -inset-1.5"></span>
+                                        <span class="sr-only">Open user menu</span>
+                                        <img class="h-8 w-8 rounded-full text-white"
+                                            src="{{ asset('img/PERSON.png') }}"
+                                            alt="">
+                                    </button>
+                                    <span class="inline-block py-2 mb-0 ml-4 text-base font-medium text-gray-300">
+                                        Selamat
+                                        datang, admin!</span>
+                                @else
+                                    <x-nav-link href='/login' :active="request()->is('contact')">Login</x-nav-link>
+                                @endif
                             </div>
+                            {{-- <div>
+                                @if (Auth::check())
+                                    <p class="block rounded-md mb-0 px-3 py-2 text-base font-medium text-gray-300">
+                                        Selamat
+                                        datang, {{ Auth::user()->name }}!</p>
+                                    <a class="block rounded-md mb-0 px-3 py-2 text-base font-medium text-gray-300"
+                                        href="/dashboard">Ke Dashboard &raquo;</a>
+                                @else
+                                    <x-nav-link href='/login' :active="request()->is('contact')">Login</x-nav-link>
+                                @endif
+                            </div> --}}
 
-                            <!--
-                    Dropdown menu, show/hide based on menu state.
-
-                    Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                    Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
                             <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform"
                                 x-transition:enter-start="opacity-0 scale-95"
                                 x-transition:enter-end="opacity-100 scale-100"
@@ -68,12 +79,15 @@
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                 tabindex="-1">
                                 <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 no-underline"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 no-underline"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 no-underline"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 no-underline"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Dashboard</a>
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit"
+                                        class="block px-4 py-2 text-sm text-gray-700 no-underline" role="menuitem"
+                                        tabindex="-1" id="user-menu-item-2">Logout</button>
+                                </form>
+
                             </div>
                         </div>
                     </div>

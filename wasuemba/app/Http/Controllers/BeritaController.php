@@ -10,6 +10,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Facades\Redirect;
 
 
 class BeritaController extends Controller
@@ -64,5 +65,21 @@ class BeritaController extends Controller
 
         // Redirect ke halaman utama atau halaman artikel setelah berhasil disimpan
         return redirect()->route('berita.create')->with('success', 'Berita berhasil ditambahkan!');
+    }
+
+        /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id): RedirectResponse
+    {
+        // $wisata = Wisata::where($wisata->id,$request->id)->firstOrFail();
+        //get post by ID
+        $berita = Berita::findOrFail($id);
+
+        //delete image
+        // Storage::delete('public/wisata/'. $post->image);
+        $berita->delete();
+
+        return Redirect::to('/berita');
     }
 }

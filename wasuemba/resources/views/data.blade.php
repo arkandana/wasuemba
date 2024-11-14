@@ -49,25 +49,25 @@
         {{-- Chart --}}
         <div class="flex-1 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Card 1: Line Chart -->
-            <div class="bg-white p-6 rounded-lg hover:shadow-xl">
+            <div class="bg-white p-6 rounded-lg hover:shadow-xl shadow-md">
                 <h2 class="text-lg font-semibold mb-4 text-center">Jumlah Pengunjung Wisatawan Desa Wasuemba, 2024</h2>
                 <canvas id="lineChart"></canvas>
             </div>
 
             <!-- Card 2: Bar Chart -->
-            <div class="bg-white p-6 rounded-lg hover:shadow-xl text-center">
+            <div class="bg-white p-6 rounded-lg hover:shadow-xl text-center shadow-md">
                 <h2 class="text-lg font-semibold mb-4">Jumlah Penduduk Desa Wasuemba, 2020-2024</h2>
                 <canvas id="barChart"></canvas>
             </div>
 
             <!-- Card 3: Doughnut Chart -->
-            <div class="bg-white p-6 rounded-lg hover:shadow-xl text-center">
+            <div class="bg-white p-6 rounded-lg hover:shadow-xl text-center shadow-md">
                 <h2 class="text-lg font-semibold mb-4">Jumlah Penduduk Desa Wasuemba Menurut Jenis Kelamin, 2024</h2>
                 <canvas id="doughnutChart"></canvas>
             </div>
 
             <!-- Card 3: Doughnut Chart -->
-            <div class="bg-white p-6 rounded-lg hover:shadow-xl text-center">
+            <div class="bg-white p-6 rounded-lg hover:shadow-xl text-center shadow-md">
                 <h2 class="text-lg font-semibold mb-4">Jumlah Pengunjung Wisatawan Desa Wasuemba, 2024</h2>
                 <table class="min-w-full bg-white border border-gray-200 rounded-lg">
                     <thead>
