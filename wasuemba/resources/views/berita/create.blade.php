@@ -14,8 +14,9 @@
                             {{ session('success') }}
                         </div>
                     @endif
-
-                    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+                    <h1 class="text-3xl">Tambah Berita</h1>
+                    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data"
+                        id="uploadForm">
                         @csrf
 
                         <div class="mb-4">

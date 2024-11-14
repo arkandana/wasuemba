@@ -24,13 +24,7 @@ class BeritaController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $userId = Auth::id();
-        
-        // Validasi input
-        // $validated = $request->validate([
-        //     'title' => ['required', 'string', 'max:255'],
-        //     'body' => ['required', 'string'],
-        //     'author' => ['required', 'string'],
-        // ]);
+
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'body' => ['required', 'string'],

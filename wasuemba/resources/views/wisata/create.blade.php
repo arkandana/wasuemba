@@ -14,7 +14,7 @@
                             {{ session('success') }}
                         </div>
                     @endif
-
+                    <h1 class="text-3xl">Tambah Daftar Wisata</h1>
                     <form action="{{ route('wisata.store') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
                         @csrf
 

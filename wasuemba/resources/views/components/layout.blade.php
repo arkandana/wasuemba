@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" class="h-full">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Halaman Blog</title>
+    <link rel="icon" href="{{ asset('img/logowasuemba.png') }}">
+    <title>Website Desa Wasuemba</title>
 </head>
 
 <body class="h-full">
@@ -26,16 +27,14 @@
     <div class="min-h-full">
         <x-navbar></x-navbar>
 
-        <header class="bg-white shadow">
+        {{-- <header class="bg-white shadow">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                {{-- {{$slot}} --}}
+                {{$slot}}
             </div>
-        </header>
+        </header> --}}
 
-        <main>
-            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                {{ $slot }}
-            </div>
+        <main class="min-h-full">
+            {{ $slot }}
         </main>
 
         {{-- Footer --}}

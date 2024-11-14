@@ -10,6 +10,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Support\Facades\Redirect;
 
 class WisataController extends Controller
 {
@@ -88,8 +89,11 @@ class WisataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(wisata $wisata)
+    public function destroy(wisata $wisata, Request $request): RedirectResponse
     {
-        //
+        $wisata = Wisata::where($wisata->id,$request->id)->firstOrFail();
+        $wisata->delete();
+
+        return Redirect::to('/wisata');
     }
 }

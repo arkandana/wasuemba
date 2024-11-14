@@ -33,6 +33,7 @@ Route::get('/about', function () {
 
 Route::get('/wisata/tambah', [WisataController::class, 'create'])->middleware(['auth', 'verified'])->name('wisata.create');
 Route::post('/wisata/tambah', [WisataController::class, 'store'])->middleware(['auth', 'verified'])->name('wisata.store');
+Route::delete('/wisata', [WisataController::class, 'destroy'])->middleware(['auth', 'verified'])->name('wisata.destroy');
 
 Route::get('/wisata', function () {
     return view('wisata',['wisataList'=>wisata::all()]);
