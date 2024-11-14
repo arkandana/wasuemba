@@ -89,9 +89,9 @@ class WisataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(wisata $wisata, Request $request): RedirectResponse
     {
-        $wisata = Wisata::where($wisata->id,$request->id)->firstOrFail();
+        dd($request->id);
+        $wisata = Wisata::where('id',$request->id)->firstOrFail();
         $wisata->delete();
 
         return Redirect::to('/wisata');

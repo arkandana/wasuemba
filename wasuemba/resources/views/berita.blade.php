@@ -24,6 +24,15 @@
                             Baca Selengkapnya
                         </a>
                     </div>
+                    @if (Auth::check() && Auth::user())
+                        <form action="{{ route('berita.destroy', $post->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Apakah Anda yakin ingin menghapus artikel ini?')">Hapus
+                            </button>
+                        </form>
+                    @endif
                 </div>
             @endforeach
         </div>
