@@ -91,12 +91,9 @@ class WisataController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        // $wisata = Wisata::where($wisata->id,$request->id)->firstOrFail();
         //get post by ID
         $wisata = Wisata::findOrFail($id);
 
-        //delete image
-        // Storage::delete('public/wisata/'. $post->image);
         $wisata->delete();
 
         return Redirect::to('/wisata');
