@@ -19,7 +19,7 @@ class WisataController extends Controller
      */
     public function index()
     {
-        $wisataList = wisata::all(); // Mengambil semua data dari model Wisata
+        $wisataList = Wisata::all(); // Mengambil semua data dari model Wisata
         return view('wisata', compact('wisataList'));
     }
 
@@ -65,7 +65,7 @@ class WisataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(wisata $wisata)
+    public function show(Wisata $wisata)
     {
         //
     }
@@ -73,7 +73,7 @@ class WisataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(wisata $wisata)
+    public function edit(Wisata $wisata)
     {
         //
     }
@@ -81,7 +81,7 @@ class WisataController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, wisata $wisata)
+    public function update(Request $request, Wisata $wisata)
     {
         //
     }
@@ -89,9 +89,11 @@ class WisataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    public function destroy($id): RedirectResponse
     {
-        dd($request->id);
-        $wisata = Wisata::where('id',$request->id)->firstOrFail();
+        //get post by ID
+        $wisata = Wisata::findOrFail($id);
+
         $wisata->delete();
 
         return Redirect::to('/wisata');
