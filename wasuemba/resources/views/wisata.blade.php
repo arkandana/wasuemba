@@ -19,7 +19,7 @@
                             {{ ucfirst(Str::lower($wisata['deskripsi'])) }}
                         </p>
                         @if (Auth::check() && Auth::user())
-                            <form action="{{ route('wisata.destroy', $wisata->id) }}" method="POST"
+                            <form action="{{ route('wisata.destroy',$wisata->id) }}" method="POST"
                                 style="display:inline;">
                                 @csrf
                                 @method('DELETE')

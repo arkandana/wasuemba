@@ -72,12 +72,9 @@ class BeritaController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        // $wisata = Wisata::where($wisata->id,$request->id)->firstOrFail();
         //get post by ID
         $berita = Berita::findOrFail($id);
 
-        //delete image
-        // Storage::delete('public/wisata/'. $post->image);
         $berita->delete();
 
         return Redirect::to('/berita');
