@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\WisataController;
+use App\Http\Controllers\ExcelController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -48,9 +49,7 @@ Route::get('/berita/{post:slug}', function(Berita $post){
     return view('berita1',['title'=>'Single Post','post'=>$post]);
 });
 
-Route::get('/data', function () {
-    return view('data');
-});
+Route::get('/data',[ExcelController::class, 'dashboard'])->name('data');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -68,6 +67,8 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
 
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
+Route::get('/upload-excel', [ExcelController::class, 'index'])->name('upload-excel');
+Route::post('/upload-excel', [ExcelController::class, 'import'])->name('import-excel');
 
 
 require __DIR__.'/auth.php';

@@ -3,8 +3,8 @@
         <h1 class="text-5xl font-bold text-center text-gray-800 mb-8">Halaman Berita</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            @foreach ($posts as $post)
-                <div class="bg-white shadow-md rounded-lg overflow-hidden p-4 hover:shadow-xl transition-shadow">
+            @foreach ($posts->sortByDesc('created_at') as $post)
+                <div class="inline-block max-w-fit max-h-fit bg-white shadow-md rounded-lg overflow-hidden p-4 hover:shadow-xl transition-shadow">
                     <img class="" src="{{ asset('storage/' . $post->image) }}" alt="Profile Image">
                     <div class="text-center mt-4">
                         <h3 class="text-xl font-semibold text-gray-900">{{ Str::title($post['title']) }}</h3>

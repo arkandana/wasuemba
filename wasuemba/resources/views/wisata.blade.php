@@ -7,8 +7,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Card 1 -->
-                @foreach ($wisataList as $wisata)
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden p-4 hover:shadow-xl transition-shadow">
+                @foreach ($wisataList->sortByDesc('created_at') as $wisata)
+                    <div class="inline-block max-w-fit max-h-fit bg-white shadow-md rounded-lg overflow-hidden p-4 hover:shadow-xl transition-shadow">
                         <img class="" src="{{ asset('storage/' . $wisata->image) }}" alt="Profile Image">
                         <div class="text-center mt-4">
                             <h3 class="text-xl font-semibold text-gray-900">{{ Str::upper($wisata['title']) }}</h3>
