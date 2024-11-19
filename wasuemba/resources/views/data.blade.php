@@ -42,7 +42,7 @@
                 <div class="p-4">
                     <h2 class="text-2xl font-bold text-gray-800 text-center">Infografis Desa Cantik 2024</h2>
                 </div>
-                <div class="w-full h-120 bg-gray-200">
+                <div class="w-fit h-fit bg-gray-200">
                     <img class="w-full h-full object-cover" src="{{ asset('img/Infografis Desa Wasuemba.png') }}"
                         alt="">
                 </div>
