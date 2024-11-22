@@ -26,6 +26,9 @@
                         <li>
                             <a href="/wisata/tambah" class="no-underline hover:underline">Tambah List Wisata &raquo;</a>
                         </li>
+                        <li>
+                            <a href="/upload-excel" class="no-underline hover:underline">Tambah Data Strategis &raquo;</a>
+                        </li>
                     </ul>
                     
                     

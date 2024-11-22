@@ -14,7 +14,7 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    <h1 class="text-3xl">Tambah Berita</h1>
+                    <h1 class="text-3xl">Tambah Data Strategis</h1>
                     <form action="{{ route('import-excel') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 

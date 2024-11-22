@@ -70,20 +70,23 @@
                 <h2 class="text-lg font-semibold mb-4">Jumlah Penduduk Desa Wasuemba Menurut Jenis Kelamin, 2024</h2>
                 <canvas id="doughnutChart"></canvas>
             </div>
-
-            <!-- Card 3: Doughnut Chart -->
+        </div>
+        <div class="flex-1 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            {{-- kata ucup pisahin carousel dengan table yang sesuai tahun --}}
+            {{-- kata rizqun kalo mau pake table pisahin 2 kolom aja --}}
             <div class="inline-block max-w-fit max-h-fit bg-white p-6 rounded-lg hover:shadow-xl text-center shadow-md">
                 <h2 class="text-lg font-semibold mb-4">Jumlah Pengunjung Wisatawan Desa Wasuemba, 2024</h2>
                 <table class="min-w-full bg-white border border-gray-200 rounded-lg">
                     <thead>
-                        <tr class="text-left bg-gray-100">
-                            <th class="px-4 py-2 border-b">Month</th>
-                            <th class="px-4 py-2 border-b">Amount</th>
+                        <tr class="text-center bg-gray-100">
+                            <th class="px-4 py-2 border-b">Jumlah Penduduk</th>
+                            <th class="px-4 py-2 border-b">Jumlah Pengangguran</th>
+                            <th class="px-4 py-2 border-b">Jumlah Pengunjung</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($data as $item)
-                            <tr class="hover:bg-gray-50">
+                            <tr class="text-centerhover:bg-gray-50">
                                 <td class="px-4 py-2 border-b">{{ $item->Jumlah_Penduduk }}</td>
                                 <td class="px-4 py-2 border-b">{{ $item->Jumlah_Pengangguran }}</td>
                                 <td class="px-4 py-2 border-b">{{ $item->Jumlah_Pengunjung }}</td>
@@ -92,7 +95,8 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
+
+
     </div>
 </x-layout>

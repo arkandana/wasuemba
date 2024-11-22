@@ -3,7 +3,7 @@
         <div class="container mx-auto px-4 py-8">
             <!-- Grid dengan 3 kolom pada layar medium ke atas, dan 1 kolom pada layar kecil -->
             <h1 class="text-5xl font-bold text-center text-gray-800 mb-8">Tentang Kami</h1>
-            <img class="mx-auto w-200" src="{{ asset('img/logowasuemba.png') }}" alt="Logo Desa Wasuemba">
+            <img class="mb-8 mx-auto w-200" src="{{ asset('img/logowasuemba.png') }}" alt="Logo Desa Wasuemba">
             <p class="text-left">
                 Desa Wasuemba merupakan salah satu desa di Kecamatan Wabula Kabupaten Buton, Provinsi Sulawesi Tenggara,
                 memilik luas 4500 Ha yang terdiri dari 60 Ha berupa pemukiman Existing, 808 Ha berupa Pengembangan
@@ -46,7 +46,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                 <!-- Video 1 -->
-                <div class="aspect-w-16 aspect-h-9">
+                <div class="h-96">
                     <iframe class="w-full h-full rounded-lg shadow-md"
                         src="https://www.youtube.com/embed/66Vzt3Db3cc?si=qpy392ruzd-vjT9o" title="YouTube video player"
                         frameborder="0"
@@ -56,7 +56,7 @@
                 </div>
 
                 <!-- Video 2 -->
-                <div class="aspect-w-16 aspect-h-9">
+                <div class="aspect-w-16 aspect-h-16">
                     <iframe class="w-full h-full rounded-lg shadow-md"
                         src="https://www.youtube.com/embed/0gFltbO_Lis?si=GLN_1VdIrO2gP73U" title="YouTube video player"
                         frameborder="0"
@@ -66,7 +66,7 @@
                 </div>
 
                 <!-- Video 3 -->
-                <div class="aspect-w-16 aspect-h-9">
+                <div class="aspect-w-16 aspect-h-16">
                     <iframe class="w-full h-full rounded-lg shadow-md"
                         src="https://www.youtube.com/embed/pptUDFmyiTg?si=sfibtT1s8oZM6tH9" title="YouTube video player"
                         frameborder="0"

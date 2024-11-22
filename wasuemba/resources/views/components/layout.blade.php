@@ -39,15 +39,15 @@
 
         {{-- Footer --}}
         <div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
+            <footer class="row d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-6 d-flex align-items-center">
                     <img width="30" height="24" src="{{ asset('img/logo_bps.png') }}" alt="Logo Desa Wasuemba">
                     <img width="30" height="24" src="{{ asset('img/Logo_DESCAN_1_002.png') }}"
                         alt="Logo Desa Wasuemba">
-                    <span class="mb-3 mb-md-0 text-body-secondary">© Tim Desa Cantik BPS Kabupaten Buton</span>
+                    <span class="mb-3 mb-md-0 text-body-secondary">© Tim Desa Cantik (Cinta Statistik) BPS Kabupaten Buton</span>
                 </div>
 
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <ul class="nav col-md-6 justify-content-end list-unstyled d-flex">
                     <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook"
                                 width="30" height="30"></i></a></li>
                     <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram"
