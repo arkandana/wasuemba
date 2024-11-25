@@ -14,7 +14,10 @@
                             {{ session('success') }}
                         </div>
                     @endif
-                    <h1 class="text-3xl">Tambah Data Strategis</h1>
+                    <h1 class="text-3xl mb-4">Tambah Data Strategis</h1>
+                    
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded mb-8"><a href="{{ asset('csv_template/template_datastrat_wasuemba.csv') }}">Download Template Data</a></button>
+                    <h2 class="text-xl mb-4">Upload File csv template data</h2>
                     <form action="{{ route('import-excel') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
